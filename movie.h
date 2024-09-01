@@ -10,16 +10,17 @@ class Movie {
 private:
     string title;
     string genre;
-    int duration; 
+    int duration;
+    static int movieCount; 
 
 public:
-    
     Movie(string t, string g, int d);
 
     void display() const;
 
     string getTitle() const;
+
+    static int getMovieCount();  
 };
 
 #endif
-

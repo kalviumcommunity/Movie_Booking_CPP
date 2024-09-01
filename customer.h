@@ -10,15 +10,17 @@ using namespace std;
 class Customer {
 private:
     string name;
-    vector<Movie> bookings; 
+    vector<Movie> bookings;
+    static int customerCount;
 
 public:
-
     Customer(string n);
 
     void bookTicket(const Movie& movie);
 
     void displayBookings() const;
+
+    static int getCustomerCount(); 
 };
 
 #endif

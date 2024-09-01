@@ -1,11 +1,19 @@
 #include "movie.h"
 
-Movie::Movie(string t, string g, int d) : title(t), genre(g), duration(d) {}
+int Movie::movieCount = 0;
+
+Movie::Movie(string t, string g, int d) : title(t), genre(g), duration(d) {
+    movieCount++;
+}
 
 void Movie::display() const {
-    cout << "Movie: " << this->title << " (" << this->genre << ") - " << this->duration << " minutes\n";
+    cout << "Movie: " << title << " (" << genre << ") - " << duration << " minutes\n";
 }
 
 string Movie::getTitle() const {
-    return this->title;
+    return title;
+}
+
+int Movie::getMovieCount() {
+    return movieCount;
 }
