@@ -1,15 +1,24 @@
 #include "customer.h"
+#include <iostream>
 
-Customer::Customer(string n) : name(n) {}
+int Customer::customerCount = 0;
+
+Customer::Customer(string n) : name(n) {
+    customerCount++;
+}
 
 void Customer::bookTicket(const Movie& movie) {
-    this->bookings.push_back(movie);
-    cout << this->name << " booked a ticket for " << movie.getTitle() << "\n";
+    bookings.push_back(movie);
+    cout << name << " booked a ticket for " << movie.getTitle() << "\n";
 }
 
 void Customer::displayBookings() const {
-    cout << "Bookings for " << this->name << ":\n";
-    for (const auto& booking : this->bookings) {
+    cout << "Bookings for " << name << ":\n";
+    for (const auto& booking : bookings) {
         booking.display();
     }
+}
+
+int Customer::getCustomerCount() {
+    return customerCount;
 }

@@ -2,6 +2,7 @@
 #include "customer.h"
 
 int main() {
+
     Movie* movies[] = {
         new Movie("Inception", "Sci-Fi", 148),
         new Movie("The Godfather", "Crime", 175),
@@ -18,6 +19,9 @@ int main() {
     customer->bookTicket(*movies[1]);
 
     customer->displayBookings();
+
+    cout << "Total customers: " << Customer::getCustomerCount() << "\n";
+    cout << "Total movies: " << Movie::getMovieCount() << "\n";
 
     for (int i = 0; i < 3; i++) {
         delete movies[i];
