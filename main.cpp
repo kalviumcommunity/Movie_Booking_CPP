@@ -20,8 +20,8 @@ int main() {
 
     customer->displayBookings();
 
-    cout << "Total customers: " << Customer::getCustomerCount() << "\n";
-    cout << "Total movies: " << Movie::getMovieCount() << "\n";
+    cout << "Total customers: " << Customer::getCustomerCounts() << "\n";
+     cout << "Total movies: " << Movie::getMovieCounts() << "\n";
 
     for (int i = 0; i < 3; i++) {
         delete movies[i];

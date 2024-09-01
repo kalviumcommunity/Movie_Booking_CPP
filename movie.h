@@ -11,7 +11,7 @@ private:
     string title;
     string genre;
     int duration;
-    static int movieCount; 
+    static int movieCounts; 
 
 public:
     Movie(string t, string g, int d);
@@ -20,7 +20,7 @@ public:
 
     string getTitle() const;
 
-    static int getMovieCount();  
+    static int getMovieCounts();  
 };
 
 #endif

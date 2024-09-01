@@ -1,10 +1,10 @@
 #include "customer.h"
 #include <iostream>
 
-int Customer::customerCount = 0;
+int Customer::customerCounts = 0;
 
 Customer::Customer(string n) : name(n) {
-    customerCount++;
+    customerCounts++;
 }
 
 void Customer::bookTicket(const Movie& movie) {
@@ -19,6 +19,6 @@ void Customer::displayBookings() const {
     }
 }
 
-int Customer::getCustomerCount() {
-    return customerCount;
+int Customer::getCustomerCounts() {
+    return customerCounts;
 }

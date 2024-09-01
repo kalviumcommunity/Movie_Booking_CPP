@@ -1,9 +1,9 @@
 #include "movie.h"
 
-int Movie::movieCount = 0;
+int Movie::movieCounts = 0;
 
 Movie::Movie(string t, string g, int d) : title(t), genre(g), duration(d) {
-    movieCount++;
+    movieCounts++;
 }
 
 void Movie::display() const {
@@ -14,6 +14,6 @@ string Movie::getTitle() const {
     return title;
 }
 
-int Movie::getMovieCount() {
-    return movieCount;
+int Movie::getMovieCounts() {
+    return movieCounts;
 }

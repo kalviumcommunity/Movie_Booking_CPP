@@ -11,7 +11,7 @@ class Customer {
 private:
     string name;
     vector<Movie> bookings;
-    static int customerCount;
+    static int customerCounts;
 
 public:
     Customer(string n);
@@ -20,7 +20,7 @@ public:
 
     void displayBookings() const;
 
-    static int getCustomerCount(); 
+    static int getCustomerCounts(); 
 };
 
 #endif
