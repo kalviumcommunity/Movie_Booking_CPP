@@ -5,19 +5,20 @@
 #include <vector>
 #include "movie.h"
 
-using namespace std;
-
 class Customer {
 private:
-    string name;
-    vector<Movie> bookings;
+    std::string name;  
+    std::vector<Movie> bookings;
     static int customerCounts;
 
 public:
-    Customer(string n);
+    Customer(std::string n);
+
+
+    std::string getName() const; 
+    void setName(const std::string& n); 
 
     void bookTicket(const Movie& movie);
-
     void displayBookings() const;
 
     static int getCustomerCounts(); 

@@ -1,5 +1,6 @@
 #include "movie.h"
 #include "customer.h"
+using namespace std;
 
 int main() {
 
