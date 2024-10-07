@@ -7,21 +7,23 @@
 
 class Customer {
 private:
-    std::string name;  
-    std::vector<Movie> bookings;
-    static int customerCounts;
+    std::string name;  // Private data member
+    std::vector<Movie> bookings;  // Private data member (abstraction)
+    static int customerCounts;  // Private static member (hidden implementation detail)
 
 public:
-    Customer(std::string n);
+    Customer(std::string n);  // Public constructor (visible to users)
 
-
-    std::string getName() const; 
-    void setName(const std::string& n); 
-
+    // Public interface (providing necessary methods)
     void bookTicket(const Movie& movie);
     void displayBookings() const;
 
+    // Public static method to get customer counts (essential information exposed)
     static int getCustomerCounts(); 
+
+    // Accessor and mutator (for name, controlled access to private data)
+    std::string getName() const;  
+    void setName(const std::string& n);  
 };
 
 #endif
