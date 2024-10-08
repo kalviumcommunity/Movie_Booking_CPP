@@ -7,22 +7,22 @@
 
 class Customer {
 private:
-    std::string name;  
-    std::vector<Movie> bookings; 
-    static int customerCounts;  
+    std::string name;
+    std::vector<Movie> bookings;
+    static int customerCounts;
 
 public:
-    Customer(std::string n); 
 
+    Customer();
+
+    Customer(std::string n);
 
     void bookTicket(const Movie& movie);
     void displayBookings() const;
 
     static int getCustomerCounts(); 
 
-
-    std::string getName() const;  
-    void setName(const std::string& n);  
+    ~Customer();
 };
 
 #endif
