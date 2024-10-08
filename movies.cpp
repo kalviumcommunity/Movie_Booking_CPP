@@ -6,33 +6,16 @@ Movie::Movie(std::string t, std::string g, int d) : title(t), genre(g), duration
     movieCounts++;
 }
 
-
-std::string Movie::getTitle() const {
-    return title;
-}
-
-std::string Movie::getGenre() const {
-    return genre;
-}
-
-int Movie::getDuration() const {
-    return duration;
-}
-
-void Movie::setTitle(const std::string& t) {
-    title = t;
-}
-
-void Movie::setGenre(const std::string& g) {
-    genre = g;
-}
-
-void Movie::setDuration(int d) {
-    duration = d;
+Movie::~Movie() {
+    std::cout << "Movie " << title << " is being deleted\n";
 }
 
 void Movie::display() const {
     std::cout << "Movie: " << title << " (" << genre << ") - " << duration << " minutes\n";
+}
+
+std::string Movie::getTitle() const {
+    return title;
 }
 
 int Movie::getMovieCounts() {

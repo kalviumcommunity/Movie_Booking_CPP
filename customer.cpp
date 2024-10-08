@@ -3,18 +3,17 @@
 
 int Customer::customerCounts = 0;
 
-Customer::Customer(std::string n) : name(n) {
+Customer::Customer() : name("Unknown") {
     customerCounts++;
 }
 
 
-std::string Customer::getName() const {
-    return name;
+Customer::Customer(std::string n) : name(n) {
+    customerCounts++;
 }
 
-
-void Customer::setName(const std::string& n) {
-    name = n;
+Customer::~Customer() {
+    std::cout << "Customer " << name << " is being deleted\n";
 }
 
 void Customer::bookTicket(const Movie& movie) {
@@ -24,8 +23,8 @@ void Customer::bookTicket(const Movie& movie) {
 
 void Customer::displayBookings() const {
     std::cout << "Bookings for " << name << ":\n";
-    for (std::vector<Movie>::const_iterator it = bookings.begin(); it != bookings.end(); ++it) {
-        it->display();
+    for (const auto& booking : bookings) {
+        booking.display();
     }
 }
 

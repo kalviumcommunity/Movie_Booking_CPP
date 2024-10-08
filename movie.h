@@ -6,27 +6,22 @@
 
 class Movie {
 private:
-    std::string title;   
-    std::string genre;   
-    int duration;        
-    static int movieCounts;  
+    std::string title;
+    std::string genre;
+    int duration;
+    static int movieCounts;
 
 public:
-    Movie(std::string t, std::string g, int d); 
 
-    void display() const;  
-    std::string getTitle() const;  
-
-    static int getMovieCounts();  
-
-    std::string getGenre() const;
-    void setGenre(const std::string& g);
-
-    int getDuration() const;
-    void setDuration(int d);
+    Movie(std::string t, std::string g, int d);
 
 
-    void setTitle(const std::string& t); 
+    ~ Movie();
+
+    void display() const;
+    std::string getTitle() const;
+
+    static int getMovieCounts(); 
 };
 
 #endif
