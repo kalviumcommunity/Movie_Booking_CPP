@@ -1,4 +1,5 @@
 #include "movie.h"
+#include <iostream>
 
 int Movie::movieCounts = 0;
 

@@ -2,7 +2,6 @@
 #define MOVIE_H
 
 #include <string>
-#include <iostream>
 
 class Movie {
 private:
@@ -12,16 +11,11 @@ private:
     static int movieCounts;
 
 public:
-
     Movie(std::string t, std::string g, int d);
-
-
-    ~ Movie();
-
     void display() const;
     std::string getTitle() const;
-
-    static int getMovieCounts(); 
+    static int getMovieCounts();
+    virtual ~Movie();
 };
 
 #endif

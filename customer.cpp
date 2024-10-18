@@ -7,7 +7,6 @@ Customer::Customer() : name("Unknown") {
     customerCounts++;
 }
 
-
 Customer::Customer(std::string n) : name(n) {
     customerCounts++;
 }
@@ -30,4 +29,16 @@ void Customer::displayBookings() const {
 
 int Customer::getCustomerCounts() {
     return customerCounts;
+}
+
+
+PremiumCustomer::PremiumCustomer(std::string n) : Customer(n), discountRate(0.1) {}
+
+void PremiumCustomer::bookTicket(const Movie& movie) {
+    Customer::bookTicket(movie);
+    std::cout << "Premium discount applied: " << (discountRate * 100) << "%\n";
+}
+
+double PremiumCustomer::getDiscountRate() const {
+    return discountRate;
 }
