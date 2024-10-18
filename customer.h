@@ -12,17 +12,23 @@ private:
     static int customerCounts;
 
 public:
-
     Customer();
-
     Customer(std::string n);
-
-    void bookTicket(const Movie& movie);
+    virtual void bookTicket(const Movie& movie);
     void displayBookings() const;
+    static int getCustomerCounts();
+    virtual ~Customer();
+};
 
-    static int getCustomerCounts(); 
 
-    ~Customer();
+class PremiumCustomer : public Customer {
+private:
+    double discountRate;
+
+public:
+    PremiumCustomer(std::string n);
+    void bookTicket(const Movie& movie) override;
+    double getDiscountRate() const;
 };
 
 #endif
