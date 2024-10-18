@@ -12,8 +12,11 @@ private:
     static int customerCounts;
 
 public:
-    Customer();
-    Customer(std::string n);
+
+    Customer();                       
+    Customer(std::string n);           
+    Customer(std::string n, int age);  
+
     virtual void bookTicket(const Movie& movie);
     void displayBookings() const;
     static int getCustomerCounts();
