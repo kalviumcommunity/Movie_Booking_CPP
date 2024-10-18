@@ -11,6 +11,12 @@ Customer::Customer(std::string n) : name(n) {
     customerCounts++;
 }
 
+
+Customer::Customer(std::string n, int age) : name(n) {
+    std::cout << "Customer " << n << " with age " << age << " created.\n";
+    customerCounts++;
+}
+
 Customer::~Customer() {
     std::cout << "Customer " << name << " is being deleted\n";
 }
@@ -30,7 +36,6 @@ void Customer::displayBookings() const {
 int Customer::getCustomerCounts() {
     return customerCounts;
 }
-
 
 PremiumCustomer::PremiumCustomer(std::string n) : Customer(n), discountRate(0.1) {}
 
