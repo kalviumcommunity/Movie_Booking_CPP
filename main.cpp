@@ -1,20 +1,28 @@
 #include "movie.h"
 #include "customer.h"
+#include "booking.h"
 #include <iostream>
 
-using namespace std;
-
 int main() {
-    Movie* inception = new Movie("Inception", "Sci-Fi", 148);
-    PremiumCustomer* premiumCustomer = new PremiumCustomer("Premium John");
-    premiumCustomer->bookTicket(*inception);
-    premiumCustomer->displayBookings();
+    Movie inception("Inception", "Sci-Fi", 148);
 
-    cout << "Total customers: " << Customer::getCustomerCounts() << "\n";
-    cout << "Total movies: " << Movie::getMovieCounts() << "\n";
+    Customer regularCustomer("Regular Alice");
+    regularCustomer.bookTicket(inception);
+    regularCustomer.displayBookings();
 
-    delete inception;
-    delete premiumCustomer;
+    PremiumCustomer premiumCustomer("Premium John");
+    premiumCustomer.bookTicket(inception);
+    premiumCustomer.displayBookings();
+
+
+    Booking regularBooking(regularCustomer, inception);
+    regularBooking.confirmBooking();
+
+    Booking premiumBooking(premiumCustomer, inception);
+    premiumBooking.confirmBooking();
+
+    std::cout << "Total customers: " << Customer::getCustomerCounts() << "\n";
+    std::cout << "Total movies: " << Movie::getMovieCounts() << "\n";
 
     return 0;
 }
