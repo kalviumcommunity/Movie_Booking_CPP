@@ -2,26 +2,23 @@
 #define MOVIE_H
 
 #include <string>
-#include <iostream>
-
-using namespace std;
 
 class Movie {
 private:
-    string title;
-    string genre;
+    std::string title;
+    std::string genre;
     int duration;
     static int movieCounts;
 
 public:
-    Movie(string t, string g, int d);
-
+    Movie(const std::string& title, const std::string& genre, int duration);
     ~Movie();
 
+    std::string getTitle() const;
+    std::string getGenre() const;
+    int getDuration() const;
     void display() const;
-    string getTitle() const;
-
-    static int getMovieCounts(); 
+    static int getMovieCounts();
 };
 
 #endif
