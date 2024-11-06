@@ -7,11 +7,11 @@
 
 class Booking {
 private:
-    Customer customer;
+    Customer& customer;  
     Movie movie;
 
 public:
-    Booking(const Customer& customer, const Movie& movie) 
+    Booking(Customer& customer, const Movie& movie) 
         : customer(customer), movie(movie) {}
 
     void confirmBooking() const {

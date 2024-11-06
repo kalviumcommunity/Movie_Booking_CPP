@@ -4,6 +4,7 @@
 #include "movie.h"
 #include <string>
 #include <vector>
+#include <iostream>
 
 class Customer {
 protected:
@@ -26,7 +27,7 @@ public:
         std::cout << name << " booked a ticket for " << movie.getTitle() << "\n";
     }
 
-    void displayBookings() const {
+    virtual void displayBookings() const {
         std::cout << "Bookings for " << name << ":\n";
         for (const auto& booking : bookings) {
             booking.display();
@@ -34,6 +35,7 @@ public:
     }
 
     static int getCustomerCounts() { return customerCounts; }
+    std::string getName() const { return name; }
 };
 
 int Customer::customerCounts = 0;
