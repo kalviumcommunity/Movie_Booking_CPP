@@ -5,7 +5,7 @@ using namespace std;
 
 int Customer::customerCounts = 0;
 
-Customer::Customer(string n) : name(n) {
+Customer::Customer(const std::string& n) : name(n) {
     customerCounts++;
 }
 
@@ -25,14 +25,11 @@ void Customer::displayBookings() const {
     }
 }
 
-
 int Customer::getCustomerCounts() {
     return customerCounts;
 }
 
-
-PremiumCustomer::PremiumCustomer(string n) : Customer(n), discountRate(0.1) {}
-
+PremiumCustomer::PremiumCustomer(const std::string& n) : Customer(n), discountRate(0.1) {}
 
 void PremiumCustomer::bookTicket(const Movie& movie) {
     bookings.push_back(movie);
